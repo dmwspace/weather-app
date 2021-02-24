@@ -7,27 +7,24 @@ function Header() {
     const [zipCode, setZipCode] = useState(0)
 
     function handleChange(e) {
-        const newZip = e.target
-        setZipCode(newZip)
+        setZipCode(e)
+        console.log(zipCode)
     }
 
     function handleClick() {
-        const url = `api.openweathermap.org/data/2.5/weather?zip=${zipCode}&units=imperial&appid=process.env.REACT_APP_OPENWEATHERMAPAPI_KEY`
+        const url = `api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${process.env.REACT_APP_OPENWEATHERMAPAPI_KEY}`
         fetch(url)
         .then(res => res.json())
-        .then(res => {
-            const data = res.data
-            console.log(data)
-        })
-        
+        .then(data => console.log(data)) 
+        console.log(url)
     }
     return (
         <div>
-            <input type="number"
+            <input type="text"
                 placeholder="Enter US Zip Code"
                 ref={zipCodeRef}
-                value={zipCode}
-                onChange={handleChange}
+                //value={zipCode}
+                onChange={(e) => handleChange(e.target.value)}
             ></input><button
                 onClick={handleClick}
             >Submit</button>
