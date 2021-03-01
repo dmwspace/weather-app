@@ -1,23 +1,42 @@
 import React, {useState, useRef} from "react";
 
 function Header() {
-
     const zipCodeRef = useRef(null)
 
     const [zipCode, setZipCode] = useState(0)
+    const [clicked, setClicked] = useState(false)
+    const [cityName, setCityName] = useState("")
+    const [stateName, setStateName] = useState("")
+    const [temp, setTemp] = useState("")
+    const [description, setDescription] = useState("")
 
     function handleChange(e) {
         setZipCode(e)
-        console.log(zipCode)
     }
 
     function handleClick() {
-        const url = `api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${process.env.REACT_APP_OPENWEATHERMAPAPI_KEY}`
+        const apiKey = process.env.REACT_APP_WEATHERBIT_API_KEY
+        const url = `http://api.weatherbit.io/v2.0/current?postal_code=${zipCode}&country=US&units=I&key=${apiKey}`
         fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data)) 
-        console.log(url)
+        .then(data => {
+            console.log(data)
+            setClicked(true)
+            setCityName(data.data[0].city_name)
+            setStateName(data.data[0].state_code)
+            setDescription(data.data[0].weather.description)
+            setTemp(data.data[0].temp)
+        })
     }
+    const currentWeatherInfo = clicked ?
+        <div>
+            <h1>Current weather conditions for {cityName}, {stateName}</h1>
+            <h2>{description}</h2> 
+            <h2>Temp: {temp} degrees</h2>
+        </div>
+
+        :null
+
     return (
         <div>
             <input type="text"
@@ -28,6 +47,7 @@ function Header() {
             ></input><button
                 onClick={handleClick}
             >Submit</button>
+            {currentWeatherInfo}
         </div>
     )
 }
