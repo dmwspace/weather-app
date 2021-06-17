@@ -26,15 +26,16 @@ function Header() {
             setStateName(data.data[0].state_code)
             setDescription(data.data[0].weather.description)
             setTemp(data.data[0].temp)
+            zipCodeRef.current.focus()
+            zipCodeRef.current.value = null
         })
     }
     const currentWeatherInfo = clicked ?
         <div>
-            <h1>Current weather conditions for {cityName}, {stateName}</h1>
+            <h1>Current weather conditions for {zipCode} - {cityName}, {stateName}:</h1>
             <h2>{description}</h2> 
             <h2>Temp: {temp} degrees</h2>
         </div>
-
         :null
 
     return (
