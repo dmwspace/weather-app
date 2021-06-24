@@ -6,6 +6,7 @@ import Current from "./Current"
 function Header() {
     const [
         inputRef,
+        fetched,
         handleKeyPress,  
         zipCode, 
         clicked, 
@@ -28,19 +29,21 @@ function Header() {
         temp={temp}
         windDirection={windDirection}
         windSpeed={windSpeed}
+        fetched={fetched}
         clicked={clicked}
         />
 
-    const forecast = forecastArr.map(item => <FiveDay
+    const forecast = forecastArr.map((item, index) => <FiveDay
         item={item} 
-        key={item.index} 
+        key={index} 
+        fetched={fetched}
         clicked={clicked}
         />) 
 
     return (
         <div>
             <input type="text"
-                placeholder="Enter US City, and State"
+                placeholder="Enter US Zip Code"
                 ref={inputRef}
                 //value={city}
                 onChange={(e) => handleChange(e.target.value)}

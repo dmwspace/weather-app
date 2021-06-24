@@ -3,6 +3,7 @@ import {useState, useRef, useEffect} from "react";
 function Hooks() {
     const inputRef = useRef(null)
 
+    const [fetched, setFetched] = useState(false)
     const [fiveDigits, setfiveDigits] = useState(null)
     const [zipCode, setZipCode] = useState(null)
     const [clicked, setClicked] = useState(false)
@@ -25,17 +26,19 @@ function Hooks() {
     useEffect(() => {
         inputRef.current.focus()
         inputRef.current.value = null
-    }, [cityName, stateName])
+    }, [zipCode])
 
     function handleClick() {
+        setFetched(false)
+        setClicked(true)
+        setZipCode(fiveDigits)
         const apiKey = process.env.REACT_APP_WEATHERBIT_API_KEY
         const url = `http://api.weatherbit.io/v2.0/current?postal_code=${fiveDigits}&country=US&units=I&key=${apiKey}`
         const url2 = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${fiveDigits}&days=6&units=I&key=${apiKey}`
         fetch(url)
         .then(res => res.json())
         .then(data => {
-            setClicked(true)
-            setZipCode(fiveDigits)
+            setFetched(true)
             setCityName(data.data[0].city_name)
             setStateName(data.data[0].state_code)
             setDescription(data.data[0].weather.description)
@@ -53,6 +56,7 @@ function Hooks() {
     return (
         [
             inputRef,
+            fetched,
             handleKeyPress,
             zipCode, 
             clicked, 
