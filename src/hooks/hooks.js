@@ -29,12 +29,13 @@ function Hooks() {
     }, [zipCode])
 
     function handleClick() {
+        setClicked(false)
         setFetched(false)
-        setClicked(true)
         setZipCode(fiveDigits)
         const apiKey = process.env.REACT_APP_WEATHERBIT_API_KEY
         const url = `http://api.weatherbit.io/v2.0/current?postal_code=${fiveDigits}&country=US&units=I&key=${apiKey}`
-        const url2 = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${fiveDigits}&days=6&units=I&key=${apiKey}`
+        const url2 = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${fiveDigits}&days=5&units=I&key=${apiKey}`
+        setTimeout(() => {setClicked(true)}, 300)
         fetch(url)
         .then(res => res.json())
         .then(data => {

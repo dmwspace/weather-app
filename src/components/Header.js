@@ -35,7 +35,8 @@ function Header() {
 
     const forecast = forecastArr.map((item, index) => <FiveDay
         item={item} 
-        key={index} 
+        key={index}
+        number={index} 
         fetched={fetched}
         clicked={clicked}
         />) 

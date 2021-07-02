@@ -1,6 +1,8 @@
 import React from "react";
 
 function Current(props) {
+
+    const currentTemp = Math.round(props.temp)
     return (
             !props.clicked ?
                 null :
@@ -9,7 +11,7 @@ function Current(props) {
                 <div>
                     <h1>Current weather conditions for {props.cityName}, {props.stateName}:</h1>
                     <h2>{props.description}</h2> 
-                    <h2>Temp: {props.temp} degrees</h2>
+                    <h2>Temp: {currentTemp} degrees</h2>
                     <h2>Wind: {props.windDirection} {props.windSpeed} mph </h2>
                 </div>
                 
