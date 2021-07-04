@@ -51,16 +51,6 @@ function FiveDay(props) {
             "Saturday" :
             null
 
-
-    console.log(fullWeekdayName)
-    
-    const day = 
-        props.number === 0 ?
-            "Today" :
-        props.number === 1 ?
-            "Tomorrow" :
-            fullWeekdayName
-
     const hiTemp = Math.round(props.item.max_temp)
     const loTemp = Math.round(props.item.min_temp)
 
@@ -70,11 +60,17 @@ function FiveDay(props) {
         props.clicked && !props.fetched ?
             null :
             <div>
-                <h1>{day}</h1>
-                <h2> {props.item.weather.description}</h2>
+                <h1>{fullWeekdayName}</h1>
+                <img src={process.env.PUBLIC_URL + "/icons/" + props.item.weather.icon + ".png"} alt="Problem" />
                 <h2> Hi: {hiTemp}</h2>
                 <h2> Lo: {loTemp}</h2>
-                <h2> Precip: {props.item.pop}%</h2>
+                <div>
+                    <img src={props.item.weather.code < 600 || props.item.weather.code > 699 ?
+                        process.env.PUBLIC_URL + "/icons/raindrop.png" :
+                        process.env.PUBLIC_URL + "/icons/snowflake.png"} 
+                        alt="problem"
+                    /><h2>{props.item.pop}%</h2>
+                </div>        
             </div>
         
     )
