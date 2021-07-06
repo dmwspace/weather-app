@@ -1,4 +1,5 @@
 import React from "react";
+import {Card} from "react-bootstrap"
 
 function Current(props) {
 
@@ -10,13 +11,15 @@ function Current(props) {
                 null :
             props.clicked && !props.fetched ?
                 <h1>Sorry that zip code could not be found. Please try again.</h1> :
-                <div>
-                    <h1>{props.cityName}, {props.stateName}:</h1>
-                    <img src={process.env.PUBLIC_URL + "/icons/" + props.currentIcon + ".png"} alt="Problem" />
-                    <h2>Currently {currentTemp}º, Feels like: {feelsLike}º</h2>
-                    <h2>Wind: {props.windDirection} {props.windSpeed} mph </h2>
-                </div>
-                
+                <Card bg="light">
+                    <Card.Title><h1>{props.cityName}, {props.stateName}:</h1></Card.Title>
+                    <Card.Body>
+                        <img src={process.env.PUBLIC_URL + "/icons/" + props.currentIcon + ".png"} alt="Problem" />
+                        <h2>Currently {currentTemp}º, Feels like: {feelsLike}º</h2>
+                        <h2>Wind: {props.windDirection} {props.windSpeed} mph </h2>
+                    </Card.Body>
+
+                </Card>                
     )
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import {Card} from "react-bootstrap";
 
 function FiveDay(props) {
     const year = props.item.datetime.slice(0, 4)
@@ -61,21 +62,22 @@ function FiveDay(props) {
             null :
         props.clicked && !props.fetched ?
             null :
-            <div>
-                <h1>{fullWeekdayName} {monthWithoutLeadingZero}-{dateWithoutLeadingZero}</h1>
-                <img src={process.env.PUBLIC_URL + "/icons/" + props.item.weather.icon + ".png"} alt="Problem" />
-                <h2 style={{fontWeight: 700}}>{hiTemp}  <span style={{fontWeight: 400}}>/ {loTemp}</span></h2>
-                <div>
-                    <img 
-                        id="precip"
-                        src={props.item.weather.code < 600 || props.item.weather.code > 699 ?
-                        process.env.PUBLIC_URL + "/icons/raindrop.png" :
-                        process.env.PUBLIC_URL + "/icons/snowflake.png"} 
-                        alt="problem"
-                    /><span>{props.item.pop}%</span>
-                </div>        
-            </div>
-        
+                <Card bg='primary' style={{width: '18rem'}}>
+                    <Card.Body style={{margin: 'auto'}}>
+                        <Card.Title>{fullWeekdayName} {monthWithoutLeadingZero}-{dateWithoutLeadingZero}</Card.Title>
+                        <img src={process.env.PUBLIC_URL + "/icons/" + props.item.weather.icon + ".png"} alt="Problem" />
+                        <div style={{fontSize: 20}}>
+                            <h2 style={{fontWeight: 700}}>{hiTemp}  <span style={{fontWeight: 400}}>/ {loTemp}</span></h2>
+                            <img 
+                                id="precip"
+                                src={props.item.weather.code < 600 || props.item.weather.code > 699 ?
+                                process.env.PUBLIC_URL + "/icons/raindrop1.png" :
+                                process.env.PUBLIC_URL + "/icons/snowflake.png"} 
+                                alt="problem"
+                            /><span>{props.item.pop}%</span>
+                        </div> 
+                    </Card.Body>
+                </Card>
     )
 }
 export default FiveDay
