@@ -65,11 +65,13 @@ function FiveDay(props) {
                 <h2> Hi: {hiTemp}</h2>
                 <h2> Lo: {loTemp}</h2>
                 <div>
-                    <img src={props.item.weather.code < 600 || props.item.weather.code > 699 ?
+                    <img 
+                        id="precip"
+                        src={props.item.weather.code < 600 || props.item.weather.code > 699 ?
                         process.env.PUBLIC_URL + "/icons/raindrop.png" :
                         process.env.PUBLIC_URL + "/icons/snowflake.png"} 
                         alt="problem"
-                    /><h2>{props.item.pop}%</h2>
+                    /><span>{props.item.pop}%</span>
                 </div>        
             </div>
         

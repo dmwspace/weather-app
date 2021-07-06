@@ -56,7 +56,9 @@ function Header() {
                 onKeyDown={handleKeyPress}
             ></input><button
                 onClick={handleClick}
-            >Submit</button>
+            ><img 
+                src={process.env.PUBLIC_URL + "/icons/glass.png"} alt="?"
+                style={{width: 10}}/></button>
             {currentWeatherInfo}
             {forecast}
         </div>

@@ -37,7 +37,7 @@ function Hooks() {
         const apiKey = process.env.REACT_APP_WEATHERBIT_API_KEY
         const url = `http://api.weatherbit.io/v2.0/current?postal_code=${fiveDigits}&country=US&units=I&key=${apiKey}`
         const url2 = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${fiveDigits}&days=5&units=I&key=${apiKey}`
-        setTimeout(() => {setClicked(true)}, 500)
+        setTimeout(() => {setClicked(true)}, 600)
         fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -51,7 +51,7 @@ function Hooks() {
             setWindDirection(data.data[0].wind_cdir)
             setCurrentIcon(data.data[0].weather.icon)
         })
-        fetch(url2, {header: {'mode': 'cors'}})
+        fetch(url2, {header: {'mode': 'no-cors'}})
         .then(res => res.json())
         .then(data => setForecastArr(data.data))
     }
