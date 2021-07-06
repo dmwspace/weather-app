@@ -4,6 +4,8 @@ function FiveDay(props) {
     const year = props.item.datetime.slice(0, 4)
     const month = props.item.datetime.slice(5, 7)
     const date = props.item.datetime.slice(8)
+    const dateWithoutLeadingZero = +date
+    const monthWithoutLeadingZero = +month
 
     const monthName = 
         month === "01" ?
@@ -36,19 +38,19 @@ function FiveDay(props) {
 
     let fullWeekdayName = 
         weekday === 0 ?
-            "Sunday" :
+            "Sun" :
         weekday === 1 ?
-            "Monday" :
+            "Mon" :
         weekday === 2 ?
-            "Tuesday" :
+            "Tues" :
         weekday === 3 ?
-            "Wednesday" :
+            "Wed" :
         weekday === 4 ?
-            "Thursday" :
+            "Thu" :
         weekday === 5 ?
-            "Friday" :
+            "Fri" :
         weekday === 6 ?
-            "Saturday" :
+            "Sat" :
             null
 
     const hiTemp = Math.round(props.item.max_temp)
@@ -60,10 +62,9 @@ function FiveDay(props) {
         props.clicked && !props.fetched ?
             null :
             <div>
-                <h1>{fullWeekdayName}</h1>
+                <h1>{fullWeekdayName} {monthWithoutLeadingZero}-{dateWithoutLeadingZero}</h1>
                 <img src={process.env.PUBLIC_URL + "/icons/" + props.item.weather.icon + ".png"} alt="Problem" />
-                <h2> Hi: {hiTemp}</h2>
-                <h2> Lo: {loTemp}</h2>
+                <h2 style={{fontWeight: 700}}>{hiTemp}  <span style={{fontWeight: 400}}>/ {loTemp}</span></h2>
                 <div>
                     <img 
                         id="precip"

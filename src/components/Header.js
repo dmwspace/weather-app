@@ -58,7 +58,7 @@ function Header() {
                 onClick={handleClick}
             ><img 
                 src={process.env.PUBLIC_URL + "/icons/glass.png"} alt="?"
-                style={{width: 10}}/></button>
+                style={{width: 12}}/></button>
             {currentWeatherInfo}
             {forecast}
         </div>
