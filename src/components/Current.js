@@ -18,7 +18,6 @@ function Current(props) {
                         <h2>Currently {currentTemp}º, Feels like: {feelsLike}º</h2>
                         <h2>Wind: {props.windDirection} {props.windSpeed} mph </h2>
                     </Card.Body>
-
                 </Card>                
     )
 }

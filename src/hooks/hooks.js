@@ -51,7 +51,7 @@ function Hooks() {
             setWindDirection(data.data[0].wind_cdir)
             setCurrentIcon(data.data[0].weather.icon)
         })
-        fetch(url2, {header: {mode: 'no-cors'}})
+        fetch(url2)
         .then(res => res.json())
         .then(data => setForecastArr(data.data))
     }
