@@ -60,7 +60,7 @@ function FiveDay(props) {
     return (
         !props.clicked ?
             null :
-        props.clicked && !props.fetched ?
+        props.clicked && !props.fiveDayFetched ?
             null :
                 <Card bg='primary' style={{width: '18rem'}}>
                     <Card.Body style={{margin: 'auto'}}>

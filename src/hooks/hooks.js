@@ -3,7 +3,8 @@ import {useState, useRef, useEffect} from "react";
 function Hooks() {
     const inputRef = useRef(null)
 
-    const [fetched, setFetched] = useState(false)
+    const [currentFetched, setCurrentFetched] = useState(false)
+    const [fiveDayFetched, setFiveDayFetched] = useState(false)
     const [fiveDigits, setfiveDigits] = useState(null)
     const [zipCode, setZipCode] = useState(null)
     const [clicked, setClicked] = useState(false)
@@ -32,16 +33,17 @@ function Hooks() {
 
     function handleClick() {
         setClicked(false)
-        setFetched(false)
+        setCurrentFetched(false)
+        setFiveDayFetched(false)
         setZipCode(fiveDigits)
         const apiKey = process.env.REACT_APP_WEATHERBIT_API_KEY
         const url = `http://api.weatherbit.io/v2.0/current?postal_code=${fiveDigits}&country=US&units=I&key=${apiKey}`
-        const url2 = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${fiveDigits}&days=5&units=I&key=${apiKey}`
+        const url2 = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${fiveDigits}&country=US&days=5&units=I&key=${apiKey}`
         setTimeout(() => {setClicked(true)}, 600)
-        fetch(url)
+        fetch(url, {header: {mode: 'no-cors'}})
         .then(res => res.json())
         .then(data => {
-            setFetched(true)
+            setCurrentFetched(true)
             setCityName(data.data[0].city_name)
             setStateName(data.data[0].state_code)
             setDescription(data.data[0].weather.description)
@@ -51,15 +53,19 @@ function Hooks() {
             setWindDirection(data.data[0].wind_cdir)
             setCurrentIcon(data.data[0].weather.icon)
         })
-        fetch(url2)
+        fetch(url2, {header: {mode: 'no-cors'}})
         .then(res => res.json())
-        .then(data => setForecastArr(data.data))
+        .then(data => {
+            setFiveDayFetched(true)
+            setForecastArr(data.data)
+        })
     }
 
     return (
         [
             inputRef,
-            fetched,
+            currentFetched,
+            fiveDayFetched,
             handleKeyPress,
             zipCode, 
             clicked, 

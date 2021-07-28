@@ -9,7 +9,7 @@ function Current(props) {
     return (
             !props.clicked ?
                 null :
-            props.clicked && !props.fetched ?
+            props.clicked && !props.currentFetched ?
                 <h1>Sorry that zip code could not be found. Please try again.</h1> :
                 <Card bg="light">
                     <Card.Title><h1>{props.cityName}, {props.stateName}:</h1></Card.Title>

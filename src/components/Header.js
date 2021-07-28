@@ -8,7 +8,8 @@ function Header() {
 
     const [
         inputRef,
-        fetched,
+        currentFetched,
+        fiveDayFetched,
         handleKeyPress,
         zipCode, 
         clicked, 
@@ -35,7 +36,7 @@ function Header() {
         feelsLike={feelsLike}
         windDirection={windDirection}
         windSpeed={windSpeed}
-        fetched={fetched}
+        currentFetched={currentFetched}
         clicked={clicked}
     />
 
@@ -43,7 +44,7 @@ function Header() {
         item={item} 
         key={index}
         number={index} 
-        fetched={fetched}
+        fiveDayFetched={fiveDayFetched}
         clicked={clicked}
     />) 
     
