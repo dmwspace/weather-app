@@ -1,29 +1,31 @@
 const express = require('express')
 const request = require('request')
+const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 4000
 
-const apiKey = process.env.REACT_APP_WEATHERBIT_API_KEY
 
-app.get('/backend_current', (req, res) => {
-    const url = `http://api.weatherbit.io/v2.0/current?postal_code=${req.query.fiveDigits}&country=US&units=I&key=${apiKey}`
-    request({url, json: true}, (error, {data}) => {
+const corsOptions = {
+    origin: '*'
+}
+
+app.get('/backend_current', cors(corsOptions), (req, res) => {
+    const url = `http://api.weatherbit.io/v2.0/current?postal_code=${req.query.zip}&country=US&units=I&key=${req.query.key}`
+    request({url, json: true}, (error, {body}) => {
         if (error) {
             return console.log('Error', error)
         }
-        console.log(data)
-        //res.send(data)
+        res.send(body)
     })
 })
 
-app.get('/backend_fiveDay', (req, res) => {
-    const url = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${req.query.fiveDigits}&country=US&days=5&units=I&key=${apiKey}`
-    request({url, json: true}, (error, {data}) => {
+app.get('/backend_fiveDay', cors(corsOptions), (req, res) => {
+    const url = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${req.query.zip}&country=US&days=5&units=I&key=${req.query.key}`
+    request({url, json: true}, (error, {body}) => {
         if (error) {
             return console.log('Error', error)
         }
-        console.log(data)
-        //res.send(data)
+        res.send(body)
     })
 })
 
