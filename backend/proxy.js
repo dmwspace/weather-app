@@ -6,7 +6,7 @@ const port = process.env.PORT || 4000
 
 
 const corsOptions = {
-    origin: '*'
+    origin: 'http://localhost:3000'
 }
 
 app.get('/backend_current', cors(corsOptions), (req, res) => {
@@ -25,6 +25,7 @@ app.get('/backend_fiveDay', cors(corsOptions), (req, res) => {
         if (error) {
             return console.log('Error', error)
         }
+        console.log(body)
         res.send(body)
     })
 })
