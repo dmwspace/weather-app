@@ -26,27 +26,33 @@ function Header() {
         forecastArr
     ] = Hooks() 
     
-    const currentWeatherInfo = <Current 
-        zipCode={zipCode}
-        cityName={cityName}
-        stateName={stateName}
-        description={description}
-        temp={temp}
-        currentIcon={currentIcon}
-        feelsLike={feelsLike}
-        windDirection={windDirection}
-        windSpeed={windSpeed}
-        currentFetched={currentFetched}
-        clicked={clicked}
-    />
+    const currentWeatherInfo = 
+        description ?
+        <Current 
+            zipCode={zipCode}
+            cityName={cityName}
+            stateName={stateName}
+            description={description}
+            temp={temp}
+            currentIcon={currentIcon}
+            feelsLike={feelsLike}
+            windDirection={windDirection}
+            windSpeed={windSpeed}
+            currentFetched={currentFetched}
+            clicked={clicked}
+        />  :
+            console.log("Unable to fetch current conditions, too many requests.")
 
-    const forecast = forecastArr.map((item, index) => <FiveDay
-        item={item} 
-        key={index}
-        number={index} 
-        fiveDayFetched={fiveDayFetched}
-        clicked={clicked}
-    />) 
+    const forecast = 
+        forecastArr ?
+        forecastArr.map((item, index) => <FiveDay
+            item={item} 
+            key={index}
+            number={index} 
+            fiveDayFetched={fiveDayFetched}
+            clicked={clicked}
+        />) :
+        console.log('There have been too many requests per second.')
     
 
     return (
@@ -59,9 +65,10 @@ function Header() {
                     onKeyDown={handleKeyPress}
                 ></input><button
                     onClick={handleClick}
-                ><img 
+                ><img id="glass"
                     src={process.env.PUBLIC_URL + "/icons/glass.png"} alt="?"
-                    style={{width: 16}}/></button>
+                /></button>
+                <h2 id="ack">Weather data provided by weatherbit.io</h2>
             </Container>
             <Container id="current-conditions">
                 {currentWeatherInfo}

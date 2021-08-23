@@ -2,6 +2,10 @@
     width: 30px
 }
 
+#glass {
+    width: 16px;
+}
+
 span {
     display: inline-grid;
     font-size: 30px;
@@ -16,6 +20,11 @@ span {
     text-align: center;
 }
 
+#input #ack {
+    font-size: 20px;
+    text-align: center;
+}
+
 #current-conditions {
     margin: auto; 
     width: 500; 
@@ -26,4 +35,95 @@ span {
     display: flex; 
     flex-direction: row;
     color: white
+}
+
+.forecast-card {
+    width: 18rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 770px) {
+     #input {
+         width: 90%;
+     }
+
+     #input #ack {
+         font-size: 15px;
+         text-align: center;
+         margin-bottom: 2px;
+     }
+
+     #current-conditions {
+        margin-top: 10px; 
+        width: 90%; 
+        text-align: center;
+    }
+
+    #current-conditions h1 {
+        font-size: 5vw;
+    }
+
+    #current-conditions img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 60px;
+    }
+
+    #current-conditions h2 {
+        font-size: 5vw;
+    }
+
+    #current-conditions .currently {
+        display: block
+    }
+
+    #current-conditions .wind {
+        display: block
+    }
+
+    #forecast {
+        display: flex;
+        flex-direction: column;
+        color: white
+    }
+
+    .forecast-card {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card-body {
+        text-align: center;
+    }
+
+    .card-body .card-title {
+        font-size: 5vw;
+        display: inline;
+        margin-right: 10px;
+    }
+
+    .card-body .img-1 {
+        height: 50px;
+        display: inline;
+        margin-right: 3px;
+    }
+
+    .card-body h2 {
+        font-size: 5vw;
+        display: inline;
+    }
+
+    .card-body div {
+        display: inline;
+    }
+    .card-body span {
+        font-size: 5vw;
+        margin-right: 2px;
+    }
+
+    .card-body .card-title {
+        display: inline;
+        text-align: left;
+    }
 }

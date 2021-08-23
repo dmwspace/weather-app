@@ -11,7 +11,7 @@ const corsOptions = {
 
 app.get('/backend_current', cors(corsOptions), (req, res) => {
     const url = `http://api.weatherbit.io/v2.0/current?postal_code=${req.query.zip}&country=US&units=I&key=${req.query.key}`
-    request({url, json: true}, (error, {body}) => {
+    request({url, method: 'GET', json: true}, (error, {body}) => {
         if (error) {
             return console.log('Error', error)
         }
@@ -21,9 +21,9 @@ app.get('/backend_current', cors(corsOptions), (req, res) => {
 
 app.get('/backend_fiveDay', cors(corsOptions), (req, res) => {
     const url = `https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${req.query.zip}&country=US&days=5&units=I&key=${req.query.key}`
-    request({url, json: true}, (error, {body}) => {
+    request({url, method: 'GET', json: true}, (error, {body}) => {
         if (error) {
-            return console.log('Error', error)
+            return console.log('Error2', error)
         }
         console.log(body)
         res.send(body)

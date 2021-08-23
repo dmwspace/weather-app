@@ -23,6 +23,7 @@ function Hooks() {
     const handleKeyPress = e => {
         if (e.key === 'Enter' || e.key === 'Return') {
             handleClick()
+            e.preventDefault()
         }
     }
 
@@ -62,7 +63,7 @@ function Hooks() {
         const url3 = "http://localhost:4000/backend_current?zip=" + fiveDigits + "&key=" + apiKey
         fetch(url3)
         .then(res => res.json())
-        .then(data => {
+        .then((data) => {
             const stringData = JSON.stringify(data)
             const currentData = JSON.parse(stringData)
             setCurrentFetched(true)

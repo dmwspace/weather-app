@@ -15,8 +15,8 @@ function Current(props) {
                     <Card.Title><h1>{props.cityName}, {props.stateName}:</h1></Card.Title>
                     <Card.Body>
                         <img src={process.env.PUBLIC_URL + "/icons/" + props.currentIcon + ".png"} alt="Problem" />
-                        <h2>Currently {currentTemp}º, Feels like: {feelsLike}º</h2>
-                        <h2>Wind: {props.windDirection} {props.windSpeed} mph </h2>
+                        <h2 className="currently">Currently {currentTemp}º, Feels like: {feelsLike}º</h2>
+                        <h2 className="wind">Wind: {props.windDirection} {props.windSpeed} mph </h2>
                     </Card.Body>
                 </Card>                
     )
