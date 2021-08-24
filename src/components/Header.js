@@ -52,8 +52,7 @@ function Header() {
             fiveDayFetched={fiveDayFetched}
             clicked={clicked}
         />) :
-        console.log('There have been too many requests per second.')
-    
+        console.log('There have been too many requests per second.') 
 
     return (
         <div>

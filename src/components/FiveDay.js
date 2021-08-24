@@ -61,7 +61,7 @@ function FiveDay(props) {
         !props.clicked ?
             null :
         props.clicked && !props.fiveDayFetched ?
-            null :
+            <h1>There are too many requests for the forecast api at this time, please try again.</h1> :
                 <Card bg='primary' bsPrefix="forecast-card">
                     <Card.Body bsPrefix="card-body">
                         <Card.Title bsPrefix="card-title">{fullWeekdayName} {monthWithoutLeadingZero}-{dateWithoutLeadingZero}</Card.Title>

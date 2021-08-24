@@ -77,14 +77,16 @@ function Hooks() {
             setCurrentIcon(currentData.data[0].weather.icon)
         })
         const url4 = "http://localhost:4000/backend_fiveDay?zip=" + fiveDigits + "&key=" + apiKey
-        fetch(url4)
-        .then(res => res.json())
-        .then(data => {
+        setTimeout(() => {
+            fetch(url4)
+            .then(res => res.json())
+            .then(data => {
             const strFiveDay = JSON.stringify(data)
             const jsonFiveDay = JSON.parse(strFiveDay)
             setFiveDayFetched(true)
             setForecastArr(jsonFiveDay.data)
         })
+    }, 1100)
     }
 
     return (
