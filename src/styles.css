@@ -27,7 +27,7 @@ span {
 
 #current-conditions {
     margin: auto; 
-    width: 500; 
+    width: 90rem; 
     text-align: center
 }
 
@@ -42,7 +42,7 @@ span {
     text-align: center;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 690px) {
      #input {
          width: 90%;
      }
@@ -106,7 +106,7 @@ span {
     .card-body .img-1 {
         height: 50px;
         display: inline;
-        margin-right: 3px;
+        margin-right: 5px;
     }
 
     .card-body h2 {
@@ -124,6 +124,5 @@ span {
 
     .card-body .card-title {
         display: inline;
-        text-align: left;
     }
 }
