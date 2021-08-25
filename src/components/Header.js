@@ -27,7 +27,6 @@ function Header() {
     ] = Hooks() 
     
     const currentWeatherInfo = 
-        description ?
         <Current 
             zipCode={zipCode}
             cityName={cityName}
@@ -40,19 +39,16 @@ function Header() {
             windSpeed={windSpeed}
             currentFetched={currentFetched}
             clicked={clicked}
-        />  :
-            console.log("Unable to fetch current conditions, too many requests.")
+        />  
 
     const forecast = 
-        forecastArr ?
         forecastArr.map((item, index) => <FiveDay
             item={item} 
             key={index}
             number={index} 
             fiveDayFetched={fiveDayFetched}
             clicked={clicked}
-        />) :
-        console.log('There have been too many requests per second.') 
+        />) 
 
     return (
         <div>

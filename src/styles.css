@@ -27,22 +27,23 @@ span {
 
 #current-conditions {
     margin: auto; 
-    width: 90rem; 
+    width: 90%; 
     text-align: center
 }
 
 #forecast {
     display: flex; 
     flex-direction: row;
-    color: white
+    color: white;
+    width: 90%;
 }
 
 .forecast-card {
-    width: 18rem;
+    width: 20%;
     text-align: center;
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 770px) {
      #input {
          width: 90%;
      }
@@ -60,7 +61,7 @@ span {
     }
 
     #current-conditions h1 {
-        font-size: 5vw;
+        font-size: 30px;
     }
 
     #current-conditions img {
@@ -71,7 +72,7 @@ span {
     }
 
     #current-conditions h2 {
-        font-size: 5vw;
+        font-size: 30px;
     }
 
     #current-conditions .currently {
@@ -98,7 +99,7 @@ span {
     }
 
     .card-body .card-title {
-        font-size: 5vw;
+        font-size: 30px;
         display: inline;
         margin-right: 10px;
     }
@@ -106,11 +107,12 @@ span {
     .card-body .img-1 {
         height: 50px;
         display: inline;
-        margin-right: 5px;
+        margin-right: 15px;
+        margin-left: 15px;
     }
 
     .card-body h2 {
-        font-size: 5vw;
+        font-size: 30px;
         display: inline;
     }
 
@@ -118,11 +120,16 @@ span {
         display: inline;
     }
     .card-body span {
-        font-size: 5vw;
+        font-size: 30px;
         margin-right: 2px;
     }
 
     .card-body .card-title {
         display: inline;
+    }
+    #precip {
+        width: 30px;
+        margin-right: 5px;
+        margin-left: 10px;
     }
 }
