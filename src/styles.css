@@ -1,47 +1,146 @@
-#precip {
-    width: 30px
+@media screen and (min-width: 992px){
+    #precip {
+        width: 30px
+    }
+    
+    #glass {
+        width: 16px;
+    }
+    
+    span {
+        display: inline-grid;
+        font-size: 30px;
+        align-items: center;
+        text-align: center
+    }
+    #input {
+        margin: 0 auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    #input #ack {
+        font-size: 20px;
+        text-align: center;
+    }
+    .current-conditions {
+        margin: auto; 
+        width: 100%; 
+        text-align: center
+    }
+
+    .current-conditions div {
+        display: inline;
+    }
+    .current-conditions span {
+        font-size: 35px;
+    }
+    .current-conditions h2 {
+        font-size: 35px;
+    }
+    #forecast {
+        display: flex; 
+        flex-direction: row;
+        color: white;
+        width: 90%;
+    }
+    .forecast-card {
+        width: 20%;
+        text-align: center;
+    } 
+}
+@media screen and (max-width: 991px) and (min-width: 771px) {
+    #precip {
+        width: 30px
+    }
+    
+    #glass {
+        width: 16px;
+    }
+    
+    span {
+        display: inline-grid;
+        font-size: 30px;
+        align-items: center;
+        text-align: center
+    }
+    #input {
+        margin: 0 auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    #input #ack {
+        font-size: 20px;
+        text-align: center;
+    }
+    #current-conditions {
+        margin: auto; 
+        width: 100%; 
+        text-align: center
+    }
+    .current-conditions h1 {
+        text-align: center;
+        font-size: 35px;
+    }
+    .current-conditions div {
+        display: block;
+    }
+    .current-conditions img {
+        height: 80px;
+    }     
+    .current-conditions span {
+        font-size: 35px;
+    }
+    .current-conditions h2 {
+        font-size: 35px;
+    }
+    #forecast {
+        display: flex; 
+        flex-direction: row;
+        color: white;
+        width: 100%;
+    }
+    .forecast-card {
+        width: 20%;
+        text-align: center;
+    }
+    .card-body {
+        text-align: center;
+    }
+
+    .card-body .card-title {
+        font-size: 18px;
+        display: inline;
+        margin-right: 10px;
+    }
+
+    .card-body .img-1 {
+        height: 50px;
+        display: inline;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .card-body h2 {
+        font-size: 18px;
+        display: inline;
+    }
+
+    .card-body div {
+        display: inline;
+    }
+    .card-body span {
+        font-size: 18px;
+        margin-right: 2px;
+    }
+    #precip {
+        width: 30px;
+        margin-right: 5px;
+        margin-left: 10px;
+    }
 }
 
-#glass {
-    width: 16px;
-}
-
-span {
-    display: inline-grid;
-    font-size: 30px;
-    align-items: center;
-    text-align: center
-}
-
-#input {
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-#input #ack {
-    font-size: 20px;
-    text-align: center;
-}
-
-#current-conditions {
-    margin: auto; 
-    width: 90%; 
-    text-align: center
-}
-
-#forecast {
-    display: flex; 
-    flex-direction: row;
-    color: white;
-    width: 90%;
-}
-
-.forecast-card {
-    width: 20%;
-    text-align: center;
-}
 
 @media screen and (max-width: 770px) {
      #input {
@@ -122,10 +221,6 @@ span {
     .card-body span {
         font-size: 30px;
         margin-right: 2px;
-    }
-
-    .card-body .card-title {
-        display: inline;
     }
     #precip {
         width: 30px;

@@ -65,7 +65,7 @@ function Header() {
                 /></button>
                 <h2 id="ack">Weather data provided by weatherbit.io</h2>
             </Container>
-            <Container id="current-conditions">
+            <Container>
                 {currentWeatherInfo}
             </Container>
             <Container id="forecast">
