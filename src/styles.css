@@ -7,12 +7,12 @@
         width: 16px;
     }
     
-    span {
+    /*span {
         display: inline-grid;
         font-size: 30px;
         align-items: center;
         text-align: center
-    }
+    }*/
     #input {
         margin: 0 auto;
         padding-top: 10px;
@@ -143,9 +143,17 @@
 
 
 @media screen and (max-width: 770px) {
-     #input {
-         width: 90%;
-     }
+
+    #input {
+        margin: 0 auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    #glass {
+        width: 12px;
+    }
 
      #input #ack {
          font-size: 15px;
@@ -153,32 +161,33 @@
          margin-bottom: 2px;
      }
 
-     #current-conditions {
+     .current-conditions {
         margin-top: 10px; 
         width: 90%; 
         text-align: center;
     }
 
-    #current-conditions h1 {
+    .current-conditions h1 {
         font-size: 30px;
+        text-align: center;
     }
 
-    #current-conditions img {
+    .current-conditions img {
         display: block;
         margin-left: auto;
         margin-right: auto;
         height: 60px;
     }
 
-    #current-conditions h2 {
+    .current-conditions h2 {
         font-size: 30px;
     }
 
-    #current-conditions .currently {
+    .current-conditions .currently {
         display: block
     }
 
-    #current-conditions .wind {
+    .current-conditions .wind {
         display: block
     }
 
@@ -193,6 +202,7 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     .card-body {
         text-align: center;
     }
