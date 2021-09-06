@@ -155,13 +155,13 @@
         width: 12px;
     }
 
-     #input #ack {
-         font-size: 15px;
-         text-align: center;
-         margin-bottom: 2px;
-     }
+    #input #ack {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 2px;
+    }
 
-     .current-conditions {
+    .current-conditions {
         margin-top: 10px; 
         width: 90%; 
         text-align: center;
