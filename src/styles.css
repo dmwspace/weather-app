@@ -2,17 +2,9 @@
     #precip {
         width: 30px
     }
-    
     #glass {
         width: 16px;
     }
-    
-    /*span {
-        display: inline-grid;
-        font-size: 30px;
-        align-items: center;
-        text-align: center
-    }*/
     #input {
         margin: 0 auto;
         padding-top: 10px;
@@ -28,7 +20,6 @@
         width: 100%; 
         text-align: center
     }
-
     .current-conditions div {
         display: inline;
     }
@@ -53,11 +44,9 @@
     #precip {
         width: 30px
     }
-    
     #glass {
         width: 16px;
-    }
-    
+    } 
     span {
         display: inline-grid;
         font-size: 30px;
@@ -90,10 +79,15 @@
         height: 80px;
     }     
     .current-conditions span {
-        font-size: 35px;
+        font-size: 15px;
     }
-    .current-conditions h2 {
-        font-size: 35px;
+    .current-conditions .wind::before{
+        content: '\A';
+        white-space: pre;
+        
+    }
+    .current-conditions .wind {
+        font-size: 20px;
     }
     #forecast {
         display: flex; 
@@ -143,98 +137,92 @@
 
 
 @media screen and (max-width: 770px) {
-
+    #body {
+        font-size: 100%;
+    }
     #input {
         margin: 0 auto;
         padding-top: 10px;
         padding-bottom: 10px;
         text-align: center;
     }
-
     #glass {
         width: 12px;
     }
 
     #input #ack {
-        font-size: 15px;
+        font-size: .7rem;
         text-align: center;
         margin-bottom: 2px;
     }
-
     .current-conditions {
         margin-top: 10px; 
         width: 90%; 
         text-align: center;
+        margin: auto;
     }
-
     .current-conditions h1 {
-        font-size: 30px;
+        font-size: 1.2rem;
         text-align: center;
     }
 
     .current-conditions img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        height: 60px;
+        height: 3rem;
+        display: inline;
     }
-
     .current-conditions h2 {
-        font-size: 30px;
+        font-size: 3rem;
     }
-
     .current-conditions .currently {
-        display: block
+        font-size: 1.2rem;
+        display: block;
+    }
+    .current-conditions #feels-like {
+        font-size: 1.2rem;
     }
 
     .current-conditions .wind {
-        display: block
+        font-size: 1.2rem;
+        display: block;
     }
-
     #forecast {
         display: flex;
         flex-direction: column;
         color: white
     }
-
     .forecast-card {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
-
     .card-body {
         text-align: center;
     }
-
     .card-body .card-title {
-        font-size: 30px;
+        font-size: 1.2rem;
         display: inline;
-        margin-right: 10px;
+        margin-right: .1rem;
     }
-
     .card-body .img-1 {
-        height: 50px;
+        height: 2rem;
         display: inline;
-        margin-right: 15px;
-        margin-left: 15px;
+        margin-right: .3rem;
+        margin-left: .3rem;
     }
-
     .card-body h2 {
-        font-size: 30px;
+        font-size: 1.2rem;
         display: inline;
     }
-
     .card-body div {
         display: inline;
     }
     .card-body span {
-        font-size: 30px;
+        font-size: 1.2rem;
         margin-right: 2px;
     }
     #precip {
-        width: 30px;
-        margin-right: 5px;
-        margin-left: 10px;
+        width: 1.8rem;
+        margin-right: .1rem;
+        margin-left: .01rem;
     }
 }

@@ -16,7 +16,8 @@ function Current(props) {
                     <Card.Body>
                         <div>
                             <img src={process.env.PUBLIC_URL + "/icons/" + props.currentIcon + ".png"} alt="Problem" />
-                            <span className="currently">Currently {currentTemp}º, Feels like: {feelsLike}º</span>
+                            <span className="currently">Currently {currentTemp}º,</span>
+                            <div id="feels-like">Feels like: {feelsLike}º</div>
                         </div>
                         <h2 className="wind">Wind: {props.windDirection} {props.windSpeed} mph </h2>
                     </Card.Body>

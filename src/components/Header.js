@@ -51,7 +51,7 @@ function Header() {
         />) 
 
     return (
-        <div>
+        <div id="body">
             <Container id="input">
                 <input type="text"
                     placeholder="Enter US Zip Code"
