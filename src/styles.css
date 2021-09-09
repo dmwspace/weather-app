@@ -23,7 +23,10 @@
     .current-conditions div {
         display: inline;
     }
-    .current-conditions span {
+    .current-conditions #feels-like {
+        font-size: 35px;
+    }
+    .current-conditions .currently {
         font-size: 35px;
     }
     .current-conditions h2 {
@@ -161,26 +164,19 @@
         text-align: center;
         margin: auto;
     }
-    .current-conditions h1 {
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
     .current-conditions img {
         height: 3rem;
         display: inline;
-    }
-    .current-conditions h2 {
-        font-size: 3rem;
+        margin-right: .8rem;
     }
     .current-conditions .currently {
         font-size: 1.2rem;
-        display: block;
     }
     .current-conditions #feels-like {
         font-size: 1.2rem;
+        display: block;
+        margin-bottom: 1rem;
     }
-
     .current-conditions .wind {
         font-size: 1.2rem;
         display: block;
