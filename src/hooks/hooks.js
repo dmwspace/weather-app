@@ -1,4 +1,5 @@
 import {useState, useRef, useEffect} from "react";
+import { API_URL } from "../App";
 
 function Hooks() {
     const inputRef = useRef(null)
@@ -60,8 +61,7 @@ function Hooks() {
         //     setFiveDayFetched(true)
         //     setForecastArr(data.data)
         // })
-        const url3 = "http://localhost:4000/backend_current?zip=" + fiveDigits + "&key=" + apiKey
-        fetch(url3)
+        fetch(`${API_URL}/backend_current?zip=${fiveDigits}&key=${apiKey}`)
         .then(res => res.json())
         .then((data) => {
             const stringData = JSON.stringify(data)
@@ -76,7 +76,7 @@ function Hooks() {
             setWindDirection(currentData.data[0].wind_cdir)
             setCurrentIcon(currentData.data[0].weather.icon)
         })
-        const url4 = "http://localhost:4000/backend_fiveDay?zip=" + fiveDigits + "&key=" + apiKey
+        const url4 = `${API_URL}/backend_fiveDay?zip=${fiveDigits}&key=${apiKey}`
         setTimeout(() => {
             fetch(url4)
             .then(res => res.json())
