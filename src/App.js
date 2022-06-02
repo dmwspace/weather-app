@@ -10,5 +10,5 @@ function App() {
   );
   
 }
-export const API_URL = "https://dean-wright-weather-app.herokuapp.com/"
+export const API_URL = "https://dean-wright-weather-backend.herokuapp.com/"
 export default App;
