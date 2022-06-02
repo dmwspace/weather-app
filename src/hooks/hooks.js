@@ -63,8 +63,8 @@ function Hooks() {
         // })
         fetch(`${API_URL}/backend_current?zip=${fiveDigits}&key=${apiKey}`)
         .then(res => res.json())
-        .then(console.log(res))
         .then((data) => {
+            console.log(data)
             const stringData = JSON.stringify(data)
             const currentData = JSON.parse(stringData)
             setCurrentFetched(true)
@@ -81,8 +81,8 @@ function Hooks() {
         setTimeout(() => {
             fetch(url4)
             .then(res => res.json())
-            .then(console.log(res))
             .then(data => {
+            (console.log(data))
             const strFiveDay = JSON.stringify(data)
             const jsonFiveDay = JSON.parse(strFiveDay)
             setFiveDayFetched(true)
