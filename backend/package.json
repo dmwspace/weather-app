@@ -4,8 +4,8 @@
   "description": "",
   "main": "proxy.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"cd ../src && npm start\"",
-    "server": "nodemon app.js"
+    "start": "node backend/proxy.js",
+    "build": "cd src && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,8 @@
     "concurrently": "^6.2.1",
     "cors": "^2.8.5",
     "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "v14.17.5"
   }
 }
