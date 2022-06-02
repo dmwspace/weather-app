@@ -62,9 +62,8 @@ function Hooks() {
         //     setForecastArr(data.data)
         // })
         fetch(`${API_URL}/backend_current?zip=${fiveDigits}&key=${apiKey}`)
-        .then(res => res.json())
+        .then(res => res.json(), console.log(res))
         .then((data) => {
-            console.log(data)
             const stringData = JSON.stringify(data)
             const currentData = JSON.parse(stringData)
             setCurrentFetched(true)
@@ -80,9 +79,8 @@ function Hooks() {
         const url4 = `${API_URL}/backend_fiveDay?zip=${fiveDigits}&key=${apiKey}`
         setTimeout(() => {
             fetch(url4)
-            .then(res => res.json())
+            .then(res => res.json(), console.log(res))
             .then(data => {
-            (console.log(data))
             const strFiveDay = JSON.stringify(data)
             const jsonFiveDay = JSON.parse(strFiveDay)
             setFiveDayFetched(true)
