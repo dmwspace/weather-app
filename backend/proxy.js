@@ -6,7 +6,7 @@ const port = process.env.PORT || 4000
 
 
 const corsOptions = {
-    origin: '*'
+    origin: 'https://dean-wright-weather-app.herokuapp.com/'
 }
 
 app.get('/backend_current', cors(corsOptions), (req, res) => {
